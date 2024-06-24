@@ -1,0 +1,3 @@
+{'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2NzkxOWYyOWVkMjgwMDAxYjQ0YWVmMyIsImlhdCI6MTcxOTIxMjUzMSwiZXhwIjoxNzE5MjEzNzMxfQ.fIekoyIZ6l6AZViHdrN_d0EMr1xy8KDpK8WUYm6sVgw'}
+
+{'email': 'cneal@example.com', 'name': 'Stephen', 'password': 'Password2'}
