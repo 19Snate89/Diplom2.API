@@ -9,10 +9,10 @@ INGREDIENTS = {"ingredients": ['61c0c5a71d1f82001bdaaa6d', '61c0c5a71d1f82001bda
 NONE_INGREDIENTS = {"ingredients": None}
 WRONG_INGREDIENTS = {"ingredients": ["61c0c5a71d1f82001bda212a6d"]}
 WRONG_USER_DATA = [('test1', 'test1'), ('test2', 'test1')]
-USER_DATA_WITHOUT_REQUIRED_FIELD = [('user.testovich@gmail.com', '', 'Password1'), ('', 'testovich', 'Password1'), ('user.testovich@gmail.com', 'testovich', '')]
+USER_DATA_WITHOUT_REQUIRED_FIELD = [('email', ''), ('name', ''), ('password', '')]
 PATCH_USER_DATA = [('', 'testovich1', ''), ('', '', 'Password2'), ('user.testovich1@gmail.com', '', ''), ('user.testovich@gmail.com', 'testovich', 'Password1')]
 
-class Generator():
+class Generator:
     def generate_user_data(self):
         data = Faker()
         user_data = {
@@ -29,7 +29,7 @@ class Generator():
         return user_data
 
 
-class Answers():
+class Answers:
 
     DUPLICATE_USER = "User already exists"
     REQUIRED_FIELD = "Email, password and name are required fields"
@@ -37,3 +37,10 @@ class Answers():
     WRONG_DATA = "email or password are incorrect"
     WITHOUT_INGREDIENTS = "Ingredient ids must be provided"
 
+class Endpoints:
+
+    URL = 'https://stellarburgers.nomoreparties.site/api'
+    CREATE_USER_POINT = '/auth/register'
+    LOGIN_USER = '/auth/login'
+    USER = '/auth/user'
+    ORDER = '/orders'
