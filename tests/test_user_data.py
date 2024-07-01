@@ -62,11 +62,11 @@ class TestLoginUser:
 
 class TestChangeUserData:
 
-    def test_create_uniq_use(self, http_client, authorization_user):
+    def test_change_user_email(self, http_client, authorization_user):
         with allure.step('Авторизируемся пользователем в системе'):
             request, email, name, password = authorization_user
-            token = {"Authorization": f"{request.json()['accessToken']}"}
-            new_email = 'newemail123@new.com'
+            token = {"Authorization": f'{request.json()["accessToken"]}'}
+            new_email = 'newemail1234@new.com'
             payload = {
                 'email': new_email,
                 'name': name,
@@ -79,10 +79,10 @@ class TestChangeUserData:
 
 
     @allure.title('Тест изменения имени пользователя')
-    def test_create_uniq_user(self, http_client, authorization_user):
+    def test_change_user_name(self, http_client, authorization_user):
         with allure.step('Авторизируемся пользователем в системе'):
             request, email, name, password = authorization_user
-            token = {"Authorization": f"{request.json()['accessToken']}"}
+            token = {"Authorization": f'{request.json()["accessToken"]}'}
             new_name = 'test'
             payload = {
                 'email': email,
@@ -96,7 +96,7 @@ class TestChangeUserData:
 
 
     @allure.title('Тест изменения пароля пользователя')
-    def test_create_uniq_user(self, http_client, authorization_user):
+    def test_change_user_password(self, http_client, authorization_user):
         with allure.step('Авторизируемся пользователем в системе'):
             request, email, name, password = authorization_user
             token = {"Authorization": f"{request.json()['accessToken']}"}

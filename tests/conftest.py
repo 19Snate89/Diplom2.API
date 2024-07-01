@@ -13,7 +13,7 @@ def token(http_client):
         'password': USER_CREDS['password']
     }
     response = http_client.send_request(HttpMethods.POST, Endpoints.LOGIN_USER, data=payload)
-    token = {"Authorization": f'{response.json()['accessToken']}'}
+    token = {"Authorization": f"{response.json()['accessToken']}"}
     return token
 
 @pytest.fixture()
@@ -26,7 +26,7 @@ def generator_user(http_client):
         'password': data['password']
     }
     response = http_client.send_request(HttpMethods.POST, Endpoints.CREATE_USER_POINT, data=payload)
-    token = {"Authorization": f'{response.json()['accessToken']}'}
+    token = {"Authorization": f"{response.json()['accessToken']}"}
     yield response, data['email'], data['name'], data['password']
     delete = http_client.send_request(HttpMethods.DELETE, Endpoints.USER, headers=token)
 
@@ -39,7 +39,7 @@ def authorization_user(http_client, generator_user):
         'password': password
     }
     response = http_client.send_request(HttpMethods.POST, Endpoints.LOGIN_USER, data=payload)
-    token = {"Authorization": f'{response.json()['accessToken']}'}
+    token = {"Authorization": f"{response.json()['accessToken']}"}
     yield response, email, name, password
     delete = http_client.send_request(HttpMethods.DELETE, Endpoints.USER, headers=token)
 
